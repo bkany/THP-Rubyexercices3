@@ -23,7 +23,7 @@ doc = Nokogiri::HTML(URI.open('https://coinmarketcap.com/all/views/all/'))
 
 # CREATION DU HASH
   result_hash = currencies_names.zip(values_array.map{ |x| x.reverse.chop.reverse.to_f }).to_h
-  array_of_hashes = result_hash.each_slice(1).map &:to_h
+  #array_of_hashes = result_hash.each_slice(1).map &:to_h
   return array_of_hashes
 end
 
