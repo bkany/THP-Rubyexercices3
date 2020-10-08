@@ -41,8 +41,8 @@ def get_townhalls_emails()
   annuaire_villes_val_doise = get_townhall_names('https://www.annuaire-des-mairies.com/val-d-oise.html')
   
   hash_annuaire = annuaire_villes_val_doise.zip(annuaire_emails_val_doise).to_h
-  
-  return hash_annuaire
+  array_of_hashes = hash_annuaire.each_slice(1).map &:to_h  
+  return array_of_hashes
 end
 
-puts get_townhalls_emails.length
+puts get_townhalls_emails
